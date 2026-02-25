@@ -62,7 +62,10 @@ body.is-portrait {
 
 * { box-sizing: border-box; }
 
-html, body { height: 100%; }
+html, body { min-height: 100%; }
+@supports (height: 100svh){
+  html, body { min-height: 100svh; }
+}
 
 html { scroll-behavior: smooth; }
 
@@ -1233,3 +1236,31 @@ a.contactCard:hover { transform: translateY(-2px); background: rgba(255, 255, 25
   .scrollHint__mouse::after { animation: none; }
 }
 
+html{
+  background: var(--bg); /* fallback behind everything */
+}
+
+body{
+  min-height: 100%;
+  background:
+    radial-gradient(1200px 700px at 20% 0%, rgba(28,105,212,.25), transparent 60%),
+    radial-gradient(900px 600px at 80% 10%, rgba(226,29,42,.14), transparent 60%),
+    linear-gradient(180deg, var(--bg), var(--bg2));
+}
+
+body{
+  padding-bottom: env(safe-area-inset-bottom);
+  background-attachment: fixed; /* optional, helps sometimes */
+}
+
+@supports (height: 100svh){
+  body{ min-height: 100svh; }
+}
+
+@supports (-webkit-touch-callout: none){
+  .siteHeader::before{
+    background: rgba(7,9,15,.72); /* was .45 -> less “gray” */
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+  }
+}
