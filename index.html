@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#07090f" />
+  <title>M-Auto Katowice — Serwis Specjalistyczny BMW</title>
+  <meta name="description" content="Nieautoryzowany serwis BMW w Katowicach. Diagnostyka, naprawy, serwis okresowy, hamulce, zawieszenie, elektronika, klimatyzacja." />
+
+  <link rel="preload" href="styles.css" as="style" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <!-- Ambient / background -->
+  <div class="ambient" aria-hidden="true">
+    <div class="ambient__vignette"></div>
+    <div class="ambient__grid"></div>
+    <div class="ambient__glow ambient__glow--blue"></div>
+    <div class="ambient__glow ambient__glow--red"></div>
+  </div>
+
+  <!-- FIX #1: one blur wrapper for BOTH bars -->
+  <header class="siteHeader" id="siteHeader">
+
+    <!-- Navbar -->
+    <div class="nav" id="nav">
+      <div class="container nav__inner">
+        <a class="brand" href="#home" aria-label="M-Auto — Strona główna">
+          <img class="brand__logo" src="assets/logo-mauto.png" alt="M-Auto" />
+          <div class="brand__text">
+            <div class="brand__name">M-Auto</div>
+            <div class="brand__sub">Serwis Specjalistyczny BMW</div>
+          </div>
+        </a>
+
+        <nav class="nav__links" aria-label="Nawigacja">
+          <a href="#o-nas">O nas</a>
+          <a href="#uslugi">Usługi</a>
+          <a href="#galeria">Galeria</a>
+          <a href="#kontakt">Kontakt</a>
+        </nav>
+
+        <div class="nav__actions">
+          <button class="nav__toggle" id="navToggle" aria-label="Otwórz menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <a class="btn btn--primary" href="#kontakt" data-magnetic>
+            Umów wizytę
+            <span class="btn__shine" aria-hidden="true"></span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Mobile drawer -->
+      <div class="drawer" id="drawer" aria-hidden="true">
+        <div class="drawer__panel">
+          <a href="#o-nas" class="drawer__link">O nas</a>
+          <a href="#uslugi" class="drawer__link">Usługi</a>
+          <a href="#galeria" class="drawer__link">Galeria</a>
+          <a href="#kontakt" class="drawer__link">Kontakt</a>
+          <div class="drawer__cta">
+            <a class="btn btn--primary btn--wide" href="#kontakt">Umów wizytę</a>
+            <a class="btn btn--ghost btn--wide" href="tel:+48322030330">Zadzwoń</a>
+          </div>
+        </div>
+        <button class="drawer__backdrop" id="drawerBackdrop" aria-label="Zamknij menu"></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main id="home">
+    <section class="hero" id="hero">
+      <!-- Parallax layers -->
+      <div class="hero__layers" aria-hidden="true">
+        <div class="layer layer--bg" data-depth="0.08"
+             style="background-image:url('assets/hero-bg.png');"></div>
+
+        <div class="layer layer--shop" data-depth="0.14"
+             style="background-image:url('assets/hero-shop.png');"></div>
+
+        <div class="layer layer--car" data-depth="0.22"
+             style="background-image:url('assets/hero-car.png');"></div>
+
+        <div class="layer layer--streaks" data-depth="0.30"
+             style="background-image:url('assets/hero-streaks.png');"></div>
+
+        <div class="layer layer--mist" data-depth="0.18"></div>
+      </div>
+
+      <div class="container hero__content">
+        <div class="hero__copy">
+          <div class="kicker reveal">
+            <span class="dot dot--blue"></span>
+            Serwis Specjalistyczny
+          </div>
+
+          <h1 class="hero__title reveal">
+            <span class="accent">Serwis BMW</span> w Katowicach
+          </h1>
+
+          <p class="hero__lead reveal">
+            Diagnostyka, naprawy i serwis okresowy BMW. Precyzja, doświadczenie i szybkie terminy —
+            bez korpo-przepychu, z jakością jakiej oczekujesz.
+          </p>
+
+          <div class="hero__cta reveal">
+            <a class="btn btn--primary" href="#kontakt" data-magnetic>
+              Umów wizytę
+              <span class="btn__shine" aria-hidden="true"></span>
+            </a>
+
+            <a class="btn btn--ghost" href="#uslugi">
+              Zobacz usługi
+            </a>
+          </div>
+
+          <div class="hero__meta reveal">
+            <a class="metaCard" href="tel:+48322030330">
+              <span class="metaCard__icon" aria-hidden="true">📞</span>
+              <span class="metaCard__text">
+                <span class="metaCard__label">Telefon</span>
+                <span class="metaCard__value">+48 32 203 03 30</span>
+              </span>
+            </a>
+
+            <a class="metaCard" href="#mapa">
+              <span class="metaCard__icon" aria-hidden="true">📍</span>
+              <span class="metaCard__text">
+                <span class="metaCard__label">Dojazd</span>
+                <span class="metaCard__value">Google Maps + trasa</span>
+              </span>
+            </a>
+          </div>
+          
+          <div class="hero__rating reveal">
+            <div class="ratingCard">
+              <div class="ratingCard__logo">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+                  <path d="M21.35 11.1h-9.17v2.86h5.29c-.23 1.23-1.42 3.6-5.29 3.6-3.18 0-5.77-2.63-5.77-5.87s2.59-5.87 5.77-5.87c1.81 0 3.03.77 3.73 1.43l2.54-2.46C17.2 3.1 15.04 2 12.18 2 6.99 2 2.75 6.25 2.75 11.69s4.24 9.69 9.43 9.69c5.44 0 9.05-3.82 9.05-9.2 0-.62-.07-1.08-.14-1.56z"/>
+                </svg>
+              </div>
+
+              <div class="ratingCard__score">
+                <div class="ratingCard__value">
+                  <span id="googleRatingValue">4.6</span>
+                  <span class="ratingCard__max">/5</span>
+                </div>
+
+                <div class="ratingCard__stars" id="ratingStars"></div>
+
+                <div class="ratingCard__reviews">
+                  <span id="googleReviewCount">296</span> opinii Google
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+    </section>
+
+    <!-- O NAS -->
+    <section class="section" id="o-nas">
+      <div class="container grid2">
+        <div class="section__copy reveal">
+          <h2>Serwis, który rozumie BMW</h2>
+          <p class="muted">
+            M-Auto to niezależny serwis w Katowicach, skupiony na marce BMW.
+            Stawiamy na rzetelną diagnostykę, przejrzystą komunikację i naprawy “raz a dobrze”.
+          </p>
+
+          <ul class="bullets">
+            <li><span class="check" aria-hidden="true">✓</span> Diagnostyka komputerowa i elektryka</li>
+            <li><span class="check" aria-hidden="true">✓</span> Serwis olejowy i okresowy</li>
+            <li><span class="check" aria-hidden="true">✓</span> Zawieszenie, hamulce, układ napędowy</li>
+            <li><span class="check" aria-hidden="true">✓</span> Klimatyzacja, chłodzenie, wycieki</li>
+          </ul>
+
+          <div class="section__actions">
+            <a class="btn btn--primary" href="#kontakt" data-magnetic>
+              Zapytaj o termin
+              <span class="btn__shine" aria-hidden="true"></span>
+            </a>
+            <a class="btn btn--ghost" href="#galeria">Zobacz warsztat</a>
+          </div>
+        </div>
+
+        <div class="section__media reveal">
+          <div class="mediaCard mediaCard--map" data-tilt>
+            <div class="mediaCard__frame">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!4v1772053852728!6m8!1m7!1sCAoSLEFGMVFpcE5vc1RBRkxoaEVVeW9oQzRmdWt2OHRONVFzakRKYXE3eTVUVFRk!2m2!1d50.2664289222562!2d19.06072221872!3f40.45451697545258!4f-8.926314935440189!5f0.5970117501821992"
+                loading="lazy"
+                allowfullscreen
+                referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+            </div>
+
+            <div class="mediaCard__overlay">
+              <div class="chip">
+                <span class="chip__dot chip__dot--blue"></span> Wnętrze warsztatu
+              </div>
+              <div class="chip">
+                <span class="chip__dot"></span> Google Street View
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- USŁUGI -->
+    <section class="section section--alt" id="uslugi">
+      <div class="container">
+        <div class="sectionHead reveal">
+          <h2>Usługi</h2>
+          <p class="muted">Opis skrócony — Dodać tutaj wybrany opis, podmienić opisy poniżej.</p>
+        </div>
+
+        <div class="cards">
+          <article class="card reveal" data-tilt>
+            <h3>Diagnostyka</h3>
+            <p>Komputer, logi, testy drogowe, elektryka. Szukamy przyczyny, nie “objawu”.</p>
+            <div class="card__meta">
+              <span class="tag">ISTA / OBD</span><span class="tag">Elektryka</span><span class="tag">Kodowania*</span>
+            </div>
+          </article>
+
+          <article class="card reveal" data-tilt>
+            <h3>Serwis okresowy</h3>
+            <p>Olej, filtry, płyny, przegląd. Dobór materiałów pod konkretny silnik i przebieg.</p>
+            <div class="card__meta">
+              <span class="tag">Olej</span><span class="tag">Filtry</span><span class="tag">Płyny</span>
+            </div>
+          </article>
+
+          <article class="card reveal" data-tilt>
+            <h3>Zawieszenie & hamulce</h3>
+            <p>Tuleje, amortyzatory, tarcze, klocki, czujniki. Pewne prowadzenie i spokój.</p>
+            <div class="card__meta">
+              <span class="tag">Geometria*</span><span class="tag">Hamulce</span><span class="tag">Zawieszenie</span>
+            </div>
+          </article>
+
+          <article class="card reveal" data-tilt>
+            <h3>Klimatyzacja</h3>
+            <p>Serwis, odgrzybianie, szczelność i napełnianie. Komfort przez cały rok.</p>
+            <div class="card__meta">
+              <span class="tag">R134a</span><span class="tag">R1234yf</span><span class="tag">Szczelność</span>
+            </div>
+          </article>
+        </div>
+
+        <p class="note reveal">* elementy zależne od wyposażenia i dostępności.</p>
+      </div>
+    </section>
+
+    <!-- GALERIA -->
+    <section class="section" id="galeria">
+      <div class="container">
+        <div class="sectionHead reveal">
+          <h2>Galeria</h2>
+          <p class="muted">Kliknij zdjęcie, żeby otworzyć podgląd.</p>
+        </div>
+
+        <div class="masonry" id="gallery">
+          <figure class="masonry__item reveal">
+            <img src="assets/gallery-1.jpg" alt="Serwis — stanowisko 1" loading="lazy" />
+          </figure>
+          <figure class="masonry__item reveal">
+            <img src="assets/gallery-2.jpg" alt="BMW w warsztacie" loading="lazy" />
+          </figure>
+          <figure class="masonry__item reveal">
+            <img src="assets/gallery-3.jpg" alt="Narzędzia i diagnostyka" loading="lazy" />
+          </figure>
+          <figure class="masonry__item reveal">
+            <img src="assets/gallery-4.jpg" alt="Serwis — stanowisko 2" loading="lazy" />
+          </figure>
+          <figure class="masonry__item reveal">
+            <img src="assets/gallery-5.jpg" alt="Detal" loading="lazy" />
+          </figure>
+          <figure class="masonry__item reveal">
+            <img src="assets/gallery-6.jpg" alt="Wnętrze serwisu" loading="lazy" />
+          </figure>
+        </div>
+      </div>
+
+      <dialog class="lightbox" id="lightbox" aria-label="Podgląd zdjęcia">
+        <button class="lightbox__close" id="lightboxClose" aria-label="Zamknij">✕</button>
+        <img class="lightbox__img" id="lightboxImg" alt="" />
+      </dialog>
+    </section>
+
+    <!-- KONTAKT + MAPA -->
+    <section class="section section--alt" id="kontakt">
+      <div class="container grid2">
+        <div class="section__copy reveal">
+          <h2>Kontakt</h2>
+          <p class="muted">Najprościej: zadzwoń lub napisz.</p>
+
+          <div class="contactCards">
+            <a class="contactCard" href="tel:+48322030330">
+              <div class="contactCard__title">Telefon</div>
+              <div class="contactCard__value">+48 32 203 03 30</div>
+              <div class="contactCard__hint">Kliknij, aby zadzwonić</div>
+            </a>
+
+            <a class="contactCard" href="mailto:kontakt@m-auto.pl">
+              <div class="contactCard__title">E-mail</div>
+              <div class="contactCard__value">kontakt@m-auto.pl</div>
+              <div class="contactCard__hint">Kliknij, aby napisać</div>
+            </a>
+
+            <div class="contactCard">
+              <div class="contactCard__title">Adres</div>
+              <div class="contactCard__value">al. Roździeńskiego 190 B</div>
+              <div class="contactCard__hint">40-203 Katowice</div>
+            </div>
+          </div>
+
+          <div class="section__actions">
+            <a class="btn btn--ghost" href="https://www.google.com/maps/dir/?api=1&destination=al.+Ro%C5%BAdzie%C5%84skiego+190B,+Katowice" target="_blank" rel="noreferrer">
+              Otwórz w Google Maps
+            </a>
+          </div>
+        </div>
+
+        <div class="section__media reveal" id="mapa">
+          <div class="mapCard" data-tilt>
+
+            <div class="mapCard__frame" role="group" aria-label="Mapa dojazdu">
+              <iframe
+                title="Mapa dojazdu — M-Auto"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2550.3682327686543!2d19.0607853!3d50.2663827!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4716cfda15d4393b%3A0x9148eb235e6b1e55!2sBMW%20serwis%20M-auto!5e0!3m2!1spl!2spl!4v1772053547288!5m2!1spl!2spl">
+              </iframe>
+
+              <div class="mapCard__overlay"></div>
+            </div>
+
+            <!-- 🔥 PRZYCISK POZA RAMKĄ -->
+            <div class="mapCard__actions">
+              <a class="btn btn--primary btn--wide"
+                 href="https://www.google.com/maps/dir/?api=1&destination=al.+Ro%C5%BAdzie%C5%84skiego+190B,+Katowice"
+                 target="_blank" rel="noreferrer" data-magnetic>
+                Dojazd z nawigacją
+                <span class="btn__shine" aria-hidden="true"></span>
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <div class="footer__left">
+          <div class="footer__brand">M-Auto Katowice</div>
+          <div class="footer__muted">© <span id="year"></span> — Serwis Specjalistyczny BMW</div>
+        </div>
+        <div class="footer__right">
+          <a href="#home">Góra</a>
+          <a href="#uslugi">Usługi</a>
+          <a href="#kontakt">Kontakt</a>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
