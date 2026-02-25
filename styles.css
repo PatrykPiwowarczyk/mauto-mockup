@@ -1264,3 +1264,13 @@ body{
     -webkit-backdrop-filter: blur(18px);
   }
 }
+
+.siteHeader{
+  padding-top: env(safe-area-inset-top);
+}
+
+body{
+  /* you already have padding-top: 44px + navH
+     add safe-area so content doesn’t go under the header */
+  padding-top: calc(env(safe-area-inset-top) + 44px + var(--navH));
+}
