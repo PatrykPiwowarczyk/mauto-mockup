@@ -260,7 +260,7 @@ document.addEventListener("click", (e) => {
   // wait until layout settles (fonts/header)
   requestAnimationFrame(() => {
     requestAnimationFrame(() => {
-      const offset = Math.round(window.innerHeight * 0.03); // 10% of viewport
+      const offset = Math.round(window.innerHeight * 0.05); // 10% of viewport
       window.scrollTo({ top: offset, left: 0, behavior: "instant" });
       sessionStorage.setItem("didInitialScroll", "1");
     });
