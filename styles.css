@@ -1439,3 +1439,11 @@ body{
 .hero__layers{
   overflow: hidden; /* extra safety */
 }
+
+@media (max-width: 800px){
+
+  .hero{
+    padding-top: calc(var(--headerH) + 8px);
+  }
+
+}
