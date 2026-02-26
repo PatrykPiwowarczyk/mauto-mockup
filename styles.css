@@ -463,6 +463,23 @@ body{
   padding: 70px 0;
 }
 
+/* ✅ Hero ends cleanly (no car bleeding visually into next section) */
+.hero{
+  position: relative;
+  overflow: hidden;
+}
+
+/* fade hero into page bg near the bottom */
+.hero::after{
+  content:"";
+  position:absolute;
+  left:0; right:0; bottom:0;
+  height: 140px;
+  pointer-events:none;
+  z-index: 6; /* above layers, below content (content is z=10) */
+  background: linear-gradient(180deg, rgba(0,0,0,0), var(--bg) 55%, var(--bg2));
+}
+
 /* Layers behind content */
 .hero__layers {
   position: absolute;
@@ -1273,4 +1290,152 @@ body{
   /* you already have padding-top: 44px + navH
      add safe-area so content doesn’t go under the header */
   padding-top: calc(env(safe-area-inset-top) + 44px + var(--navH));
+}
+
+
+@media (max-width: 800px){
+  .hero__layers::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    z-index: 5;
+    pointer-events:none;
+
+    background:
+      radial-gradient(120% 80% at 20% 30%, rgba(0,0,0,.72), rgba(0,0,0,.18) 55%, rgba(0,0,0,.38) 100%),
+      linear-gradient(180deg, rgba(0,0,0,.30), rgba(0,0,0,0) 45%, rgba(0,0,0,.35) 100%);
+  }
+
+  .hero__title,
+  .hero__lead,
+  .kicker{
+    text-shadow: 0 12px 34px rgba(0,0,0,.65);
+  }
+}
+
+@media (max-width: 800px){
+  .layer--bg,
+  .layer--shop{
+    background-position: center;
+  }
+
+  .layer--car{
+    background-position: -50% 85%;
+  }
+
+  .layer{
+    transform-origin: right center;
+  }
+}
+@media (max-width: 800px){
+  .kicker{
+    padding: 9px 12px;
+    font-size: .95rem;
+  }
+}
+
+/* ✅ Sections must not be transparent (prevents hero art showing under them) */
+.section{
+  position: relative;
+  z-index: 1; /* above hero layers */
+  background: linear-gradient(180deg, var(--bg), var(--bg2));
+  padding: 120px 0;
+}
+
+/* keep your alt look but still fully opaque */
+.section--alt{
+  background: rgba(255,255,255,.025);
+  border-top: 1px solid rgba(255,255,255,.08);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+/* ===== HERO: remove top/bottom bars ===== */
+
+/* 1) Hero height = exactly viewport minus fixed header */
+.hero{
+  position: relative;
+  overflow: hidden;
+
+  /* fixed header height: safe area + topbar + nav */
+  min-height: calc(100svh - (env(safe-area-inset-top) + 44px + var(--navH)));
+
+  /* don’t add huge vertical padding that makes hero taller than the image */
+  padding: 32px 0;
+}
+
+/* if you want some breathing room but still no bars */
+@media (min-width: 801px){
+  .hero{ padding: 40px 0; }
+}
+
+/* 2) Give layers more bleed so parallax never reveals background */
+.hero__layers .layer{
+  inset: -14%; /* was -2% / -12% */
+}
+
+/* 3) If you kept the hero bottom fade, keep it but make it smaller */
+.hero::after{
+  height: 90px;
+}
+
+/* =========================
+   FIX: remove top bar caused by body padding-top
+   (hero background goes under fixed header)
+   ========================= */
+
+:root{
+  --headerH: calc(env(safe-area-inset-top) + 44px + var(--navH));
+}
+
+/* keep content pushed below header */
+body{
+  padding-top: var(--headerH);
+}
+
+/* pull the hero background up into that padded area */
+.hero{
+  position: relative;
+  overflow: hidden;
+
+  margin-top: calc(-1 * var(--headerH));          /* ✅ removes the top bar */
+  padding-top: calc(32px + var(--headerH));      /* ✅ content still starts below header */
+  padding-bottom: 32px;
+
+  min-height: 100svh;                             /* ✅ no bottom bar */
+}
+
+/* give parallax enough bleed so it never reveals edges */
+.hero__layers .layer{
+  inset: -14%;
+}
+
+
+/* =========================
+   FIX: stop blue bleed at bottom of HERO
+   ========================= */
+
+/* Ensure hero has its own solid base behind layers */
+.hero{
+  background: linear-gradient(180deg, var(--bg), var(--bg2)); /* ✅ seals hero */
+}
+
+/* Replace any previous hero bottom fade that fades to transparency */
+.hero::after{
+  content:"";
+  position:absolute;
+  left:0; right:0; bottom:0;
+  height: 140px;
+  pointer-events:none;
+  z-index: 6; /* above layers, below content */
+
+  /* ✅ fade INTO hero's own bg2, not transparent */
+  background: linear-gradient(180deg,
+    rgba(0,0,0,0) 0%,
+    rgba(7,9,1,.92) 55%,
+    rgba(7,9,17,1) 100%
+  );
+}
+
+.hero__layers{
+  overflow: hidden; /* extra safety */
 }
