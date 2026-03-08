@@ -1476,6 +1476,16 @@ a.contactCard:hover {
     grid-template-columns: 1fr;
   }
   
+  .nav__hours {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 1px;
+    line-height: 1.15;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+  }
+  
   .layer--car {
     background-position: 58% 85%;
   }
