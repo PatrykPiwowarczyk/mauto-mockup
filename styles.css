@@ -1521,3 +1521,15 @@ a.contactCard:hover {
     animation: none;
   }
 }
+
+.siteHeader {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 100;
+  padding-top: env(safe-area-inset-top);
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
