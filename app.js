@@ -251,22 +251,6 @@ document.addEventListener("click", (e) => {
   }
 });
 
-// Mobile: start page slightly scrolled (only once per session)
-(function startSlightlyScrolledOnMobile() {
-  const isMobile = window.matchMedia("(max-width: 800px)").matches;
-  const already = sessionStorage.getItem("didInitialScroll") === "1";
-  if (!isMobile || already) return;
-
-  // wait until layout settles (fonts/header)
-  requestAnimationFrame(() => {
-    requestAnimationFrame(() => {
-      const offset = Math.round(window.innerHeight * 0.10); // 10% of viewport
-      window.scrollTo({ top: offset, left: 0, behavior: "instant" });
-      sessionStorage.setItem("didInitialScroll", "1");
-    });
-  });
-})();
-
 const ratingValue = 4.6;
 document.getElementById("googleRatingValue").textContent = ratingValue;
 renderRating(ratingValue);

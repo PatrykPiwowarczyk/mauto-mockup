@@ -25,6 +25,7 @@
   <header class="siteHeader" id="siteHeader">
 
     <!-- Navbar -->
+    
     <div class="nav" id="nav">
       <div class="container nav__inner">
         <a class="brand" href="#home" aria-label="M-Auto — Strona główna">
@@ -43,17 +44,24 @@
         </nav>
 
         <div class="nav__actions">
+
+          <a href="#kontakt" class="nav__hours">
+            <span class="nav__hoursLabel">Godziny otwarcia:</span>
+            <span class="nav__hoursValue">8:00–16:00 (pn–pt)</span>
+          </a>
+
           <button class="nav__toggle" id="navToggle" aria-label="Otwórz menu" aria-expanded="false">
             <span></span>
             <span></span>
             <span></span>
           </button>
+
           <a class="btn btn--primary" href="#kontakt" data-magnetic>
             Umów wizytę
             <span class="btn__shine" aria-hidden="true"></span>
           </a>
+
         </div>
-      </div>
 
       <!-- Mobile drawer -->
       <div class="drawer" id="drawer" aria-hidden="true">
@@ -62,6 +70,8 @@
           <a href="#uslugi" class="drawer__link">Usługi</a>
           <a href="#galeria" class="drawer__link">Galeria</a>
           <a href="#kontakt" class="drawer__link">Kontakt</a>
+          
+          
           <div class="drawer__cta">
             <a class="btn btn--primary btn--wide" href="#kontakt">Umów wizytę</a>
             <a class="btn btn--ghost btn--wide" href="tel:+48322030330">Zadzwoń</a>
@@ -126,6 +136,15 @@
                 <span class="metaCard__value">+48 32 203 03 30</span>
               </span>
             </a>
+            
+            
+            <div class="metaCard">
+              <span class="metaCard__icon" aria-hidden="true">🕒</span>
+              <span class="metaCard__text">
+                <span class="metaCard__label">Godziny otwarcia</span>
+                <span class="metaCard__value">8:00–16:00 (pn–pt)</span>
+              </span>
+            </div>
 
             <a class="metaCard" href="#mapa">
               <span class="metaCard__icon" aria-hidden="true">📍</span>
@@ -169,8 +188,7 @@
         <div class="section__copy reveal">
           <h2>Serwis, który rozumie BMW</h2>
           <p class="muted">
-            M-Auto to niezależny serwis w Katowicach, skupiony na marce BMW.
-            Stawiamy na rzetelną diagnostykę, przejrzystą komunikację i naprawy “raz a dobrze”.
+          M-Auto to niezależny serwis w Katowicach, specjalizujący się w marce BMW. Stawiamy na rzetelną diagnostykę, przejrzystą komunikację i naprawy "raz, a dobrze".
           </p>
 
           <ul class="bullets">
@@ -218,46 +236,106 @@
       <div class="container">
         <div class="sectionHead reveal">
           <h2>Usługi</h2>
-          <p class="muted">Opis skrócony — Dodać tutaj wybrany opis, podmienić opisy poniżej.</p>
+          <p class="muted">Zakres prac wykonywanych w serwisie.</p>
         </div>
 
         <div class="cards">
           <article class="card reveal" data-tilt>
-            <h3>Diagnostyka</h3>
-            <p>Komputer, logi, testy drogowe, elektryka. Szukamy przyczyny, nie “objawu”.</p>
+            <h3>Przeglądy okresowe</h3>
+            <p>Kompleksowy przegląd techniczny pojazdu zgodnie z zaleceniami producenta. Prowadzimy wpis do elektronicznej książki serwisowej BMW.</p>
             <div class="card__meta">
-              <span class="tag">ISTA / OBD</span><span class="tag">Elektryka</span><span class="tag">Kodowania*</span>
+              <span class="tag">Przegląd</span><span class="tag">Eksploatacja</span><span class="tag">Kontrola</span>
             </div>
           </article>
 
           <article class="card reveal" data-tilt>
-            <h3>Serwis okresowy</h3>
-            <p>Olej, filtry, płyny, przegląd. Dobór materiałów pod konkretny silnik i przebieg.</p>
+            <h3>Wymiana oleju</h3>
+            <p>Wymiana oleju silnikowego wraz z filtrami i kontrolą podstawowych elementów. Prowadzimy wpis do elektronicznej książki serwisowej BMW</p>
             <div class="card__meta">
-              <span class="tag">Olej</span><span class="tag">Filtry</span><span class="tag">Płyny</span>
+              <span class="tag">Olej</span><span class="tag">Filtry</span><span class="tag">Serwis</span>
             </div>
           </article>
 
           <article class="card reveal" data-tilt>
-            <h3>Zawieszenie & hamulce</h3>
-            <p>Tuleje, amortyzatory, tarcze, klocki, czujniki. Pewne prowadzenie i spokój.</p>
+            <h3>Diagnostyka komputerowa</h3>
+            <p>Diagnostyka sterowników, odczyt i analiza błędów oraz parametrów pracy pojazdu.</p>
             <div class="card__meta">
-              <span class="tag">Geometria*</span><span class="tag">Hamulce</span><span class="tag">Zawieszenie</span>
+              <span class="tag">ISTA / OBD</span><span class="tag">Diagnostyka</span><span class="tag">Błędy DTC</span>
+            </div>
+          </article>
+
+          <article class="card reveal" data-tilt>
+            <h3>Elektryka i elektronika</h3>
+            <p>
+            Lokalizujemy i usuwamy usterki instalacji elektrycznej, problemy z oświetleniem, ładowaniem, rozruchem, czujnikami i sterownikami.
+            </p>
+            <div class="card__meta">
+              <span class="tag">Elektryka</span><span class="tag">Elektronika</span><span class="tag">Diagnostyka</span>
             </div>
           </article>
 
           <article class="card reveal" data-tilt>
             <h3>Klimatyzacja</h3>
-            <p>Serwis, odgrzybianie, szczelność i napełnianie. Komfort przez cały rok.</p>
+            <p>Serwis klimatyzacji: kontrola szczelności, odgrzybianie i napełnianie i naprawa.</p>
             <div class="card__meta">
               <span class="tag">R134a</span><span class="tag">R1234yf</span><span class="tag">Szczelność</span>
             </div>
           </article>
+
+          <article class="card reveal" data-tilt>
+            <h3>Naprawa silników</h3>
+            <p>Diagnostyka i naprawy mechaniczne silników benzynowych oraz Diesla.</p>
+            <div class="card__meta">
+              <span class="tag">Diagnostyka</span><span class="tag">Naprawa</span>
+            </div>
+          </article>
+
+          <article class="card reveal" data-tilt>
+            <h3>Naprawa układu hamulcowego</h3>
+            <p>Wymiana i serwis elementów układu hamulcowego dla pełnego bezpieczeństwa.</p>
+            <div class="card__meta">
+              <span class="tag">Hamulce</span><span class="tag">Tarcze</span><span class="tag">Klocki</span><span class="tag">Płyn hamulcowy</span>
+            </div>
+          </article>
+
+          <article class="card reveal" data-tilt>
+            <h3>Naprawa zawieszenia</h3>
+            <p>Naprawa elementów zawieszenia poprawiająca prowadzenie i komfort jazdy.</p>
+            <div class="card__meta">
+              <span class="tag">Zawieszenie</span><span class="tag">Amortyzatory</span><span class="tag">Tuleje</span>
+            </div>
+          </article>
+        
+          <article class="card reveal" data-tilt>
+            <h3>Sprawdzanie historii BMW</h3>
+            <p>
+              Sprawdzamy historię pojazdu w bazie BMW AG. Na życzenie przygotowujemy
+              wyciąg w formie pliku PDF z historią serwisową oraz informacją o akcjach technicznych.
+            </p>
+            <div class="card__meta">
+              <span class="tag">BMW AG</span><span class="tag">Historia serwisowa</span><span class="tag">Raport PDF</span>
+            </div>
+          </article>
+
+          <article class="card reveal" data-tilt>
+            <h3>Regeneracja i kodowanie</h3>
+            <p>
+              Regeneracja podzespołów takich jak rozruszniki, alternatory i turbiny.
+              Oferujemy również kodowanie oraz programowanie sterowników BMW.
+            </p>
+            <div class="card__meta">
+              <span class="tag">Regeneracja</span><span class="tag">Kodowanie</span><span class="tag">Sterowniki</span>
+            </div>
+          </article>
         </div>
 
-        <p class="note reveal">* elementy zależne od wyposażenia i dostępności.</p>
+
+        <p class="note reveal">
+          Zapraszamy do kontaktu telefonicznego w celu wyceny.
+        </p>
       </div>
     </section>
+
 
     <!-- GALERIA -->
     <section class="section" id="galeria">
@@ -278,7 +356,7 @@
             <img src="assets/gallery-3.jpg" alt="Narzędzia i diagnostyka" loading="lazy" />
           </figure>
           <figure class="masonry__item reveal">
-            <img src="assets/gallery-4.jpg" alt="Serwis — stanowisko 2" loading="lazy" />
+            <img src="assets/gallery-4.png" alt="Serwis — stanowisko 2" loading="lazy" />
           </figure>
           <figure class="masonry__item reveal">
             <img src="assets/gallery-5.jpg" alt="Detal" loading="lazy" />
@@ -300,7 +378,7 @@
       <div class="container grid2">
         <div class="section__copy reveal">
           <h2>Kontakt</h2>
-          <p class="muted">Najprościej: zadzwoń lub napisz.</p>
+          <p class="muted">Godziny otwarcia: 8:00–16:00 (pn–pt)</p>
 
           <div class="contactCards">
             <a class="contactCard" href="tel:+48322030330">
@@ -325,6 +403,10 @@
           <div class="section__actions">
             <a class="btn btn--ghost" href="https://www.google.com/maps/dir/?api=1&destination=al.+Ro%C5%BAdzie%C5%84skiego+190B,+Katowice" target="_blank" rel="noreferrer">
               Otwórz w Google Maps
+            </a>
+            
+            <a class="btn btn--ghost" href="https://www.facebook.com/sc.mauto" target="_blank" rel="noreferrer">
+              Facebook
             </a>
           </div>
         </div>
