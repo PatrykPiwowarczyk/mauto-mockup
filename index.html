@@ -6,7 +6,7 @@
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#07090f">
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#07090f">
   <title>M-Auto Katowice — Serwis Specjalistyczny BMW</title>
-  <meta name="description" content="Nieautoryzowany serwis BMW w Katowicach. Diagnostyka, naprawy, serwis okresowy, hamulce, zawieszenie, elektronika, klimatyzacja." />
+  <meta name="description" content="Niezależny serwis BMW w Katowicach. Diagnostyka, naprawy, serwis okresowy, hamulce, zawieszenie, elektronika, klimatyzacja." />
 
   <link rel="preload" href="styles.css" as="style" />
   <link rel="stylesheet" href="styles.css" />
@@ -21,7 +21,6 @@
     <div class="ambient__glow ambient__glow--red"></div>
   </div>
 
-  <!-- FIX #1: one blur wrapper for BOTH bars -->
   <header class="siteHeader" id="siteHeader">
 
     <!-- Navbar -->
@@ -83,8 +82,8 @@
   </header>
 
   <!-- HERO -->
-  <main id="home">
-    <section class="hero" id="hero">
+  <main>
+    <section class="hero" id="home">
       <!-- Parallax layers -->
       <div class="hero__layers" aria-hidden="true">
         <div class="layer layer--bg" data-depth="0.08"
@@ -113,10 +112,6 @@
             <span class="accent">Serwis BMW</span> w Katowicach
           </h1>
 
-          <p class="hero__lead reveal">
-            
-          </p>
-
           <div class="hero__cta reveal">
             <a class="btn btn--primary" href="#kontakt" data-magnetic>
               Umów wizytę
@@ -136,8 +131,7 @@
                 <span class="metaCard__value">+48 32 203 03 30</span>
               </span>
             </a>
-            
-            
+
             <div class="metaCard">
               <span class="metaCard__icon" aria-hidden="true">🕒</span>
               <span class="metaCard__text">
@@ -154,54 +148,50 @@
               </span>
             </a>
           </div>
-          
-          <div class="hero__meta reveal">
-          <a
-            class="metaCard"
-            href="https://www.facebook.com/sc.mauto"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <span class="metaCard__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-                <path d="M22 12.07C22 6.5 17.52 2 12 2S2 6.5 2 12.07c0 5.03 3.66 9.2 8.44 9.93v-7.03H7.9v-2.9h2.54V9.85c0-2.52 1.49-3.91 3.78-3.91 1.1 0 2.25.2 2.25.2v2.48H15.2c-1.25 0-1.64.78-1.64 1.58v1.9h2.8l-.45 2.9h-2.35V22c4.78-.73 8.44-4.9 8.44-9.93z"/>
-              </svg>
-            </span>
-            <span class="metaCard__text">
-              <span class="metaCard__label">Facebook</span>
-              <span class="metaCard__value">Odwiedź nasz profil</span>
-            </span>
-          </a>
-          
-          <div class="hero__rating reveal">
-            <div class="ratingCard">
-              <div class="ratingCard__logo">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
-                  <path d="M21.35 11.1h-9.17v2.86h5.29c-.23 1.23-1.42 3.6-5.29 3.6-3.18 0-5.77-2.63-5.77-5.87s2.59-5.87 5.77-5.87c1.81 0 3.03.77 3.73 1.43l2.54-2.46C17.2 3.1 15.04 2 12.18 2 6.99 2 2.75 6.25 2.75 11.69s4.24 9.69 9.43 9.69c5.44 0 9.05-3.82 9.05-9.2 0-.62-.07-1.08-.14-1.56z"/>
-                </svg>
-              </div>
 
-              <div class="ratingCard__score">
-                <div class="ratingCard__value">
-                  <span id="googleRatingValue">4.6</span>
-                  <span class="ratingCard__max">/5</span>
+          <div class="hero__meta reveal">
+            <a
+              class="metaCard"
+              href="https://www.facebook.com/sc.mauto"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span class="metaCard__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                  <path d="M22 12.07C22 6.5 17.52 2 12 2S2 6.5 2 12.07c0 5.03 3.66 9.2 8.44 9.93v-7.03H7.9v-2.9h2.54V9.85c0-2.52 1.49-3.91 3.78-3.91 1.1 0 2.25.2 2.25.2v2.48H15.2c-1.25 0-1.64.78-1.64 1.58v1.9h2.8l-.45 2.9h-2.35V22c4.78-.73 8.44-4.9 8.44-9.93z"/>
+                </svg>
+              </span>
+              <span class="metaCard__text">
+                <span class="metaCard__label">Facebook</span>
+                <span class="metaCard__value">Odwiedź nasz profil</span>
+              </span>
+            </a>
+
+            <div class="hero__rating">
+              <div class="ratingCard">
+                <div class="ratingCard__logo">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+                    <path d="M21.35 11.1h-9.17v2.86h5.29c-.23 1.23-1.42 3.6-5.29 3.6-3.18 0-5.77-2.63-5.77-5.87s2.59-5.87 5.77-5.87c1.81 0 3.03.77 3.73 1.43l2.54-2.46C17.2 3.1 15.04 2 12.18 2 6.99 2 2.75 6.25 2.75 11.69s4.24 9.69 9.43 9.69c5.44 0 9.05-3.82 9.05-9.2 0-.62-.07-1.08-.14-1.56z"/>
+                  </svg>
                 </div>
 
-                <div class="ratingCard__stars" id="ratingStars"></div>
+                <div class="ratingCard__score">
+                  <div class="ratingCard__value">
+                    <span id="googleRatingValue">4.6</span>
+                    <span class="ratingCard__max">/5</span>
+                  </div>
 
-                <div class="ratingCard__reviews">
-                  <span id="googleReviewCount">296</span> opinii Google
+                  <div class="ratingCard__stars" id="ratingStars"></div>
+
+                  <div class="ratingCard__reviews">
+                    <span id="googleReviewCount">296</span> opinii Google
+                  </div>
                 </div>
               </div>
             </div>
-            
-
-
           </div>
-          
         </div>
-
-
+      </div>
     </section>
 
     <!-- O NAS -->
@@ -447,7 +437,7 @@
               <div class="mapCard__overlay"></div>
             </div>
 
-            <!-- 🔥 PRZYCISK POZA RAMKĄ -->
+            <!-- PRZYCISK POZA RAMKĄ -->
             <div class="mapCard__actions">
               <a class="btn btn--primary btn--wide"
                  href="https://www.google.com/maps/dir/?api=1&destination=al.+Ro%C5%BAdzie%C5%84skiego+190B,+Katowice"
