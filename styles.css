@@ -573,12 +573,12 @@ a {
   grid-template-columns: 1.05fr 0.95fr;
   gap: 26px;
   align-items: start;
-  padding-top: 20px;
+  padding-top: 10px;
 }
 
 .hero__copy {
   max-width: 640px;
-  margin-top: -50px;
+  margin-top: -60px;
 }
 
 .layer {
@@ -722,7 +722,7 @@ a {
   gap: 14px;
   width: 240px;
   max-width: 100%;
-  margin-top: 26px;
+  margin-top: 14px;
 }
 
 .hero__meta .metaCard {
@@ -768,7 +768,7 @@ a {
 
 .hero__rating {
   max-width: 240px;
-  margin-top: 16px;
+  margin-top: 14px;
 }
 
 .scrollHint {
@@ -1368,7 +1368,7 @@ a.contactCard:hover {
   
   .hero__copy {
     max-width: 640px;
-    margin-top: -70px;
+    margin-top: -60px;
   }
 
   .nav__links {
