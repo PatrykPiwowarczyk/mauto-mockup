@@ -176,9 +176,6 @@ a {
   left: 0;
   z-index: 100;
   padding-top: env(safe-area-inset-top);
-  transform: translateZ(0);
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
 }
 
 .siteHeader::before {
