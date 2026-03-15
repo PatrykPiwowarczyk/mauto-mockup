@@ -24,9 +24,6 @@
   </div>
 
   <header class="siteHeader" id="siteHeader">
-
-    <!-- Navbar -->
-    
     <div class="nav" id="nav">
       <div class="container nav__inner">
         <a class="brand" href="#home" aria-label="M-Auto — Strona główna">
@@ -45,7 +42,6 @@
         </nav>
 
         <div class="nav__actions">
-
           <a href="#kontakt" class="nav__hours">
             <span class="nav__hoursLabel">Godziny otwarcia:</span>
             <span class="nav__hoursValue">8:00–16:00 (pn–pt)</span>
@@ -53,7 +49,7 @@
 
           <button class="nav__toggle" id="navToggle" aria-label="Otwórz menu" aria-expanded="false">
             <span></span>
-            <span></span>
+            <span class="nav__toggle__mid"></span>
             <span></span>
           </button>
 
@@ -61,8 +57,8 @@
             Umów wizytę
             <span class="btn__shine" aria-hidden="true"></span>
           </a>
-
         </div>
+      </div>
 
       <!-- Mobile drawer -->
       <div class="drawer" id="drawer" aria-hidden="true">
@@ -71,8 +67,7 @@
           <a href="#uslugi" class="drawer__link">Usługi</a>
           <a href="#galeria" class="drawer__link">Galeria</a>
           <a href="#kontakt" class="drawer__link">Kontakt</a>
-          
-          
+
           <div class="drawer__cta">
             <a class="btn btn--primary btn--wide" href="#kontakt">Umów wizytę</a>
             <a class="btn btn--ghost btn--wide" href="tel:+48322030330">Zadzwoń</a>
@@ -83,32 +78,32 @@
     </div>
   </header>
 
-  <!-- HERO -->
   <main>
+    <!-- HERO -->
     <section class="hero" id="home">
-      <!-- Parallax layers -->
       <div class="hero__layers" aria-hidden="true">
-        <div class="layer layer--bg" data-depth="0.08"
-             style="background-image:url('assets/hero-bg.png');"></div>
-
-        <div class="layer layer--shop" data-depth="0.14"
-             style="background-image:url('assets/hero-shop.png');"></div>
-
-        <div class="layer layer--car" data-depth="0.22"
-             style="background-image:url('assets/hero-car.png');"></div>
-
-        <div class="layer layer--streaks" data-depth="0.30"
-             style="background-image:url('assets/hero-streaks.png');"></div>
-
+        <div class="layer layer--bg" data-depth="0.08" style="background-image:url('assets/hero-bg.png');"></div>
+        <div class="layer layer--shop" data-depth="0.14" style="background-image:url('assets/hero-shop.png');"></div>
+        <div class="layer layer--car" data-depth="0.22" style="background-image:url('assets/hero-car.png');"></div>
+        <div class="layer layer--streaks" data-depth="0.30" style="background-image:url('assets/hero-streaks.png');"></div>
         <div class="layer layer--mist" data-depth="0.18"></div>
       </div>
 
       <div class="container hero__content">
         <div class="hero__copy">
-          <div class="kicker reveal">
-            <span class="dot dot--blue"></span>
-            Serwis Specjalistyczny
-          </div>
+            <div class="hero__kickers reveal">
+
+              <div class="kicker">
+                <span class="dot dot--blue"></span>
+                Serwis Specjalistyczny
+              </div>
+
+              <button class="kicker kicker--promo" id="promoPill" type="button">
+                <span class="dot" aria-hidden="true"></span>
+                <span class="kicker__label">20-lecie M-Auto</span>
+              </button>
+
+            </div>
 
           <h1 class="hero__title reveal">
             <span class="accent">Serwis BMW</span> w Katowicach
@@ -151,49 +146,46 @@
             </a>
           </div>
 
+          <div class="hero__rating">
+            <div class="ratingCard">
+              <div class="ratingCard__logo">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+                  <path d="M21.35 11.1h-9.17v2.86h5.29c-.23 1.23-1.42 3.6-5.29 3.6-3.18 0-5.77-2.63-5.77-5.87s2.59-5.87 5.77-5.87c1.81 0 3.03.77 3.73 1.43l2.54-2.46C17.2 3.1 15.04 2 12.18 2 6.99 2 2.75 6.25 2.75 11.69s4.24 9.69 9.43 9.69c5.44 0 9.05-3.82 9.05-9.2 0-.62-.07-1.08-.14-1.56z"/>
+                </svg>
+              </div>
 
-
-            <div class="hero__rating">
-              <div class="ratingCard">
-                <div class="ratingCard__logo">
-                  <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
-                    <path d="M21.35 11.1h-9.17v2.86h5.29c-.23 1.23-1.42 3.6-5.29 3.6-3.18 0-5.77-2.63-5.77-5.87s2.59-5.87 5.77-5.87c1.81 0 3.03.77 3.73 1.43l2.54-2.46C17.2 3.1 15.04 2 12.18 2 6.99 2 2.75 6.25 2.75 11.69s4.24 9.69 9.43 9.69c5.44 0 9.05-3.82 9.05-9.2 0-.62-.07-1.08-.14-1.56z"/>
-                  </svg>
+              <div class="ratingCard__score">
+                <div class="ratingCard__value">
+                  <span id="googleRatingValue">4.6</span>
+                  <span class="ratingCard__max">/5</span>
                 </div>
 
-                <div class="ratingCard__score">
-                  <div class="ratingCard__value">
-                    <span id="googleRatingValue">4.6</span>
-                    <span class="ratingCard__max">/5</span>
-                  </div>
+                <div class="ratingCard__stars" id="ratingStars"></div>
 
-                  <div class="ratingCard__stars" id="ratingStars"></div>
-
-                  <div class="ratingCard__reviews">
-                    <span id="googleReviewCount">296</span> opinii Google
-                  </div>
+                <div class="ratingCard__reviews">
+                  <span id="googleReviewCount">296</span> opinii Google
                 </div>
               </div>
             </div>
-            
-            <div class="hero__meta reveal">
-              <a
-                class="metaCard"
-                href="https://www.facebook.com/sc.mauto"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span class="metaCard__icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-                    <path d="M22 12.07C22 6.5 17.52 2 12 2S2 6.5 2 12.07c0 5.03 3.66 9.2 8.44 9.93v-7.03H7.9v-2.9h2.54V9.85c0-2.52 1.49-3.91 3.78-3.91 1.1 0 2.25.2 2.25.2v2.48H15.2c-1.25 0-1.64.78-1.64 1.58v1.9h2.8l-.45 2.9h-2.35V22c4.78-.73 8.44-4.9 8.44-9.93z"/>
-                  </svg>
-                </span>
-                <span class="metaCard__text">
-                  <span class="metaCard__label">Facebook</span>
-                  <span class="metaCard__value">Odwiedź nasz profil</span>
-                </span>
-              </a>
-            
+          </div>
+
+          <div class="hero__meta reveal">
+            <a
+              class="metaCard"
+              href="https://www.facebook.com/sc.mauto"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span class="metaCard__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                  <path d="M22 12.07C22 6.5 17.52 2 12 2S2 6.5 2 12.07c0 5.03 3.66 9.2 8.44 9.93v-7.03H7.9v-2.9h2.54V9.85c0-2.52 1.49-3.91 3.78-3.91 1.1 0 2.25.2 2.25.2v2.48H15.2c-1.25 0-1.64.78-1.64 1.58v1.9h2.8l-.45 2.9h-2.35V22c4.78-.73 8.44-4.9 8.44-9.93z"/>
+                </svg>
+              </span>
+              <span class="metaCard__text">
+                <span class="metaCard__label">Facebook</span>
+                <span class="metaCard__value">Odwiedź nasz profil</span>
+              </span>
+            </a>
           </div>
         </div>
       </div>
@@ -205,7 +197,7 @@
         <div class="section__copy reveal">
           <h2>Serwis, który rozumie BMW</h2>
           <p class="muted">
-          M-Auto to niezależny serwis w Katowicach, specjalizujący się w marce BMW. Stawiamy na rzetelną diagnostykę, przejrzystą komunikację i naprawy "raz, a dobrze".
+            M-Auto to niezależny serwis w Katowicach, specjalizujący się w marce BMW. Stawiamy na rzetelną diagnostykę, przejrzystą komunikację i naprawy „raz, a dobrze”.
           </p>
 
           <ul class="bullets">
@@ -267,7 +259,7 @@
 
           <article class="card reveal" data-tilt>
             <h3>Wymiana oleju</h3>
-            <p>Wymiana oleju silnikowego wraz z filtrami i kontrolą podstawowych elementów. Prowadzimy wpis do elektronicznej książki serwisowej BMW</p>
+            <p>Wymiana oleju silnikowego wraz z filtrami i kontrolą podstawowych elementów. Prowadzimy wpis do elektronicznej książki serwisowej BMW.</p>
             <div class="card__meta">
               <span class="tag">Olej</span><span class="tag">Filtry</span><span class="tag">Serwis</span>
             </div>
@@ -283,9 +275,7 @@
 
           <article class="card reveal" data-tilt>
             <h3>Elektryka i elektronika</h3>
-            <p>
-            Lokalizujemy i usuwamy usterki instalacji elektrycznej, problemy z oświetleniem, ładowaniem, rozruchem, czujnikami i sterownikami.
-            </p>
+            <p>Lokalizujemy i usuwamy usterki instalacji elektrycznej, problemy z oświetleniem, ładowaniem, rozruchem, czujnikami i sterownikami.</p>
             <div class="card__meta">
               <span class="tag">Elektryka</span><span class="tag">Elektronika</span><span class="tag">Diagnostyka</span>
             </div>
@@ -293,7 +283,7 @@
 
           <article class="card reveal" data-tilt>
             <h3>Klimatyzacja</h3>
-            <p>Serwis klimatyzacji: kontrola szczelności, odgrzybianie i napełnianie i naprawa.</p>
+            <p>Serwis klimatyzacji: kontrola szczelności, odgrzybianie, napełnianie i naprawa.</p>
             <div class="card__meta">
               <span class="tag">R134a</span><span class="tag">R1234yf</span><span class="tag">Szczelność</span>
             </div>
@@ -322,7 +312,7 @@
               <span class="tag">Zawieszenie</span><span class="tag">Amortyzatory</span><span class="tag">Tuleje</span>
             </div>
           </article>
-        
+
           <article class="card reveal" data-tilt>
             <h3>Sprawdzanie historii BMW</h3>
             <p>
@@ -346,13 +336,11 @@
           </article>
         </div>
 
-
         <p class="note reveal">
           Zapraszamy do kontaktu telefonicznego w celu wyceny.
         </p>
       </div>
     </section>
-
 
     <!-- GALERIA -->
     <section class="section" id="galeria">
@@ -421,7 +409,7 @@
             <a class="btn btn--ghost" href="https://www.google.com/maps/dir/?api=1&destination=al.+Ro%C5%BAdzie%C5%84skiego+190B,+Katowice" target="_blank" rel="noreferrer">
               Otwórz w Google Maps
             </a>
-            
+
             <a class="btn btn--ghost" href="https://www.facebook.com/sc.mauto" target="_blank" rel="noreferrer">
               Facebook
             </a>
@@ -430,7 +418,6 @@
 
         <div class="section__media reveal" id="mapa">
           <div class="mapCard" data-tilt>
-
             <div class="mapCard__frame" role="group" aria-label="Mapa dojazdu">
               <iframe
                 title="Mapa dojazdu — M-Auto"
@@ -442,7 +429,6 @@
               <div class="mapCard__overlay"></div>
             </div>
 
-            <!-- PRZYCISK POZA RAMKĄ -->
             <div class="mapCard__actions">
               <a class="btn btn--primary btn--wide"
                  href="https://www.google.com/maps/dir/?api=1&destination=al.+Ro%C5%BAdzie%C5%84skiego+190B,+Katowice"
@@ -451,10 +437,8 @@
                 <span class="btn__shine" aria-hidden="true"></span>
               </a>
             </div>
-
           </div>
         </div>
-
       </div>
     </section>
 
@@ -472,6 +456,59 @@
       </div>
     </footer>
   </main>
+
+  <!-- POPUP PROMOCYJNY -->
+  <div class="promoPopup" id="promoPopup" aria-hidden="true">
+    <div class="promoPopup__backdrop" id="promoPopupBackdrop"></div>
+
+    <div
+      class="promoPopup__dialog"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="promoPopupTitle"
+      aria-describedby="promoPopupDesc"
+    >
+      <div class="promoPopup__confetti" id="promoPopupConfetti" aria-hidden="true"></div>
+
+      <button class="promoPopup__close" id="promoPopupClose" aria-label="Zamknij popup">
+        ✕
+      </button>
+
+      <div class="promoPopup__inner">
+        <div class="promoPopup__eyebrow">20-lecie M-Auto</div>
+
+        <h3 class="promoPopup__title" id="promoPopupTitle">
+          Świętujemy 20 lat firmy
+        </h3>
+
+        <p class="promoPopup__desc" id="promoPopupDesc">
+          Z tej okazji przez najbliższy tydzień oferujemy
+          <strong>20% zniżki</strong> na usługi serwisowe.
+          Przy płatności podaj kod: <strong>MAUTO20</strong>.
+        </p>
+
+        <div class="promoPopup__codeWrap">
+          <span class="promoPopup__codeLabel">Kod promocyjny</span>
+          <div class="promoPopup__code">MAUTO20</div>
+        </div>
+
+        <div class="promoPopup__actions">
+          <a class="btn btn--primary" href="#kontakt" id="promoPopupCta" data-magnetic>
+            Umów wizytę
+            <span class="btn__shine" aria-hidden="true"></span>
+          </a>
+
+          <button class="btn btn--ghost promoPopup__secondary" id="promoPopupDismiss" type="button">
+            Zamknij
+          </button>
+        </div>
+
+        <p class="promoPopup__note">
+          Promocja obowiązuje od 23.03.26 do 31.03.26.
+        </p>
+      </div>
+    </div>
+  </div>
 
   <script src="app.js" defer></script>
 </body>
