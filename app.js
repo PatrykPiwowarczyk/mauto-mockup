@@ -22,7 +22,9 @@ navToggle?.addEventListener("click", () => {
 });
 
 drawerBackdrop?.addEventListener("click", () => setDrawer(false));
-drawer?.querySelectorAll("a").forEach(a => a.addEventListener("click", () => setDrawer(false)));
+drawer?.querySelectorAll("a").forEach((a) => {
+  a.addEventListener("click", () => setDrawer(false));
+});
 
 document.addEventListener("click", (e) => {
   if (!drawer?.classList.contains("is-open")) return;
@@ -35,6 +37,16 @@ document.addEventListener("click", (e) => {
     setDrawer(false);
   }
 });
+
+/* =========================
+   PROMO EXPIRY
+   ========================= */
+
+const promoEndDate = new Date("2026-04-01T00:00:00");
+
+if (new Date() >= promoEndDate) {
+  document.body.classList.add("promo-expired");
+}
 
 // Reveal on scroll
 const revealEls = Array.from(document.querySelectorAll(".reveal"));
@@ -49,9 +61,9 @@ if (!prefersReduced) {
     });
   }, { threshold: 0.14 });
 
-  revealEls.forEach(el => io.observe(el));
+  revealEls.forEach((el) => io.observe(el));
 } else {
-  revealEls.forEach(el => el.classList.add("is-visible"));
+  revealEls.forEach((el) => el.classList.add("is-visible"));
 }
 
 function setParallaxMode() {
@@ -193,6 +205,8 @@ gallery?.addEventListener("click", (e) => {
 lightboxClose?.addEventListener("click", () => lightbox?.close());
 
 lightbox?.addEventListener("click", (e) => {
+  if (!lightboxImg) return;
+
   const rect = lightboxImg.getBoundingClientRect();
   const inside =
     e.clientX >= rect.left &&
@@ -263,3 +277,114 @@ async function fetchGoogleRating() {
 }
 
 fetchGoogleRating();
+
+/* =========================
+   Promo popup
+   ========================= */
+
+const promoPopup = document.getElementById("promoPopup");
+const promoPopupBackdrop = document.getElementById("promoPopupBackdrop");
+const promoPopupClose = document.getElementById("promoPopupClose");
+const promoPopupDismiss = document.getElementById("promoPopupDismiss");
+const promoPopupCta = document.getElementById("promoPopupCta");
+const promoPopupConfetti = document.getElementById("promoPopupConfetti");
+
+function openPromoPopup() {
+  if (!promoPopup) return;
+
+  promoPopup.classList.add("is-open");
+  promoPopup.setAttribute("aria-hidden", "false");
+  document.body.classList.add("promo-open");
+
+  burstPromoConfetti();
+}
+
+function closePromoPopup() {
+  if (!promoPopup) return;
+
+  promoPopup.classList.remove("is-open");
+  promoPopup.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("promo-open");
+}
+
+promoPopupBackdrop?.addEventListener("click", closePromoPopup);
+promoPopupClose?.addEventListener("click", closePromoPopup);
+promoPopupDismiss?.addEventListener("click", closePromoPopup);
+promoPopupCta?.addEventListener("click", closePromoPopup);
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && promoPopup?.classList.contains("is-open")) {
+    closePromoPopup();
+  }
+});
+
+function burstPromoConfetti() {
+  if (!promoPopupConfetti || prefersReduced) return;
+
+  promoPopupConfetti.innerHTML = "";
+
+  const colors = [
+    "confetti-piece--bmw-blue",
+    "confetti-piece--bmw-navy",
+    "confetti-piece--silver",
+    "confetti-piece--white",
+    "confetti-piece--red"
+  ];
+
+  const shapes = [
+    "confetti-piece--line",
+    "confetti-piece--sliver",
+    "confetti-piece--chip"
+  ];
+
+  const total = 42;
+
+  for (let i = 0; i < total; i++) {
+    const piece = document.createElement("span");
+    piece.classList.add("confetti-piece");
+
+    const color = colors[Math.floor(Math.random() * colors.length)];
+    const shape = shapes[Math.floor(Math.random() * shapes.length)];
+
+    const startX = `${Math.random() * 140 - 70}px`;
+    const endX = `${Math.random() * 560 - 280}px`;
+    const endY = `${260 + Math.random() * 220}px`;
+    const rotation = `${180 + Math.random() * 420}deg`;
+    const delay = `${Math.random() * 300}ms`;
+    const duration = `${2600 + Math.random() * 1800}ms`;
+    const left = `${8 + Math.random() * 84}%`;
+
+    piece.classList.add(color, shape);
+    piece.style.left = left;
+    piece.style.animationDelay = delay;
+    piece.style.animationDuration = duration;
+    piece.style.setProperty("--x-start", startX);
+    piece.style.setProperty("--x-end", endX);
+    piece.style.setProperty("--y-end", endY);
+    piece.style.setProperty("--rot-end", rotation);
+
+    promoPopupConfetti.appendChild(piece);
+  }
+
+  window.setTimeout(() => {
+    if (promoPopupConfetti) {
+      promoPopupConfetti.innerHTML = "";
+    }
+  }, 5600);
+}
+
+window.addEventListener("load", () => {
+  window.setTimeout(() => {
+    openPromoPopup();
+  }, 500);
+});
+
+/* =========================
+   Promo pill reopen popup
+   ========================= */
+
+const promoPill = document.getElementById("promoPill");
+
+promoPill?.addEventListener("click", () => {
+  openPromoPopup();
+});
